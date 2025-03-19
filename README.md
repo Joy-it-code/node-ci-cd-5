@@ -50,6 +50,7 @@ or using **PM2:**
 
 ```
 pm2 start index.js --name "node-app"
+node -v
 ```
 
 ---
