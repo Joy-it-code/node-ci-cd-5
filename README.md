@@ -158,6 +158,30 @@ jobs:
 ```
 
 ---
+**Run test On Terminal:**
+```
+npm test
+node index.js
+curl http://18.208.177.81:3000
+```
+![](./img/1b.npm.png)
+![](./img/1a.node.png)
+
+**Run test On Browser:**
+```
+http://localhost:3000
+http://18.208.177.81:3000
+```
+
+**On EC2 Instance to Monitor log**
+```
+curl http://localhost:3000
+pm2 logs index.js
+pm2 list
+```
+![](./img/2a.curlec2.png)
+
+---
 
 ## 🔒 Security Best Practices
 
@@ -237,6 +261,7 @@ permissions:
 ## 📊 Monitoring & Debugging
 
 **📌 Check Logs** in GitHub Actions tab
+
 **📌 Monitor EC2 Instance**
 
 
