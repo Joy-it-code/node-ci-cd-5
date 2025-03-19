@@ -1,0 +1,22 @@
+name: Build and Test Node.js Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run ESLint for Linting
+        run: npx eslint . --ext .js
+
+      - name: Run Tests
+        run: npm test
