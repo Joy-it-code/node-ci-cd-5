@@ -163,7 +163,7 @@ jobs:
 ```
 npm test
 node index.js
-curl http://18.208.177.81:3000
+curl http://18.212.191.213:3000
 ```
 ![](./img/1b.npm.png)
 ![](./img/1a.node.png)
@@ -171,7 +171,7 @@ curl http://18.208.177.81:3000
 **Run test On Browser:**
 ```
 http://localhost:3000
-http://18.208.177.81:3000
+http://18.212.191.213:3000
 ```
 
 **On EC2 Instance to Monitor log**

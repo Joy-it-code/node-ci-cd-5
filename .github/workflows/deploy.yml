@@ -34,8 +34,8 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd ~/node-ci-cd-4 || git clone https://github.com/Joy-it-code/node-ci-cd-4.git ~/node-ci-cd-4
-            cd ~/node-ci-cd-4
+            cd ~/node-ci-cd-5 || git clone https://github.com/Joy-it-code/node-ci-cd-5.git ~/node-ci-cd-5
+            cd ~/node-ci-cd-5
             git pull origin main
             npm install
-            pm2 restart index.js || pm2 start index.js --name "node-app"
+            pm2 restart index.js || pm2 start index.js --name "node-app"  

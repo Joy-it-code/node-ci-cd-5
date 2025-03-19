@@ -12,22 +12,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '16'
-
-      - name: Clear npm Cache
-        run: npm cache clean --force
-
       - name: Install Dependencies
         run: npm install
 
-      - name: Fix Permissions
-        run: chmod +x ./node_modules/.bin/eslint
-
-      - name: Run ESLint for Linting
-        run: ./node_modules/.bin/eslint . --ext .js
+      - name: Run ESLint
+        run: npx eslint . --ext .js
 
       - name: Run Tests
         run: npm test
