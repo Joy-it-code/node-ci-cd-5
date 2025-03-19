@@ -13,10 +13,16 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci  # Ensures dependencies are installed correctly
+
+      - name: Check ESLint Installation
+        run: npx eslint --version  # Confirm ESLint is installed
+
+      - name: Fix ESLint Permission Issue
+        run: chmod +x node_modules/.bin/eslint  # Avoid "Permission Denied"
 
       - name: Run ESLint
-        run: npx eslint . --ext .js
+        run: npx eslint . --ext .js --debug  # Debug mode for error visibility
 
       - name: Run Tests
         run: npm test

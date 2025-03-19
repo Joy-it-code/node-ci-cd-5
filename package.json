@@ -1,25 +1,25 @@
 {
-  "name": "node-ci-cd-3",
+  "name": "node-ci-cd-5",
   "version": "1.0.0",
   "description": "This project demonstrates a Continuous Integration (CI) and Continuous Deployment (CD) pipeline for a Node.js application using GitHub Actions and AWS EC2. The goal is to automate the testing, building, and deployment process to ensure reliable and efficient software delivery.",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "jest",
-    "lint": "eslint . --fix"
-  },
+  "start": "node index.js",
+  "test": "jest",
+  "lint": "npx eslint . --ext .js --fix"
+},
   "repository": {
     "type": "git",
-    "url": "https://github.com/Joy-it-code/node-ci-cd-3.git"
+    "url": "https://github.com/Joy-it-code/node-ci-cd-5.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Joy-it-code/node-ci-cd-3/issues"
+    "url": "https://github.com/Joy-it-code/node-ci-cd-5/issues"
   },
-  "homepage": "https://github.com/Joy-it-code/node-ci-cd-3#readme",
+  "homepage": "https://github.com/Joy-it-code/node-ci-cd-5#readme",
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",

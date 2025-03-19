@@ -1,16 +1,19 @@
-module.exports = {
-  languageOptions: {
-    ecmaVersion: "latest", // Specify ECMAScript version
-    globals: {
-      window: "readonly", // For browser
-      document: "readonly", // For browser
-      process: "readonly", // For Node.js
-      console: "readonly",
+module.exports = [
+  {
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module", // Ensures compatibility with ES modules
+      globals: {
+        window: "readonly",
+        document: "readonly",
+        process: "readonly",
+        console: "readonly",
+      },
     },
+    rules: {
+      "no-console": "off", // Allow console logs
+      "semi": ["error", "always"], // Enforce semicolons
+    },
+    ignores: [".env", "node_modules/"], // Ignore these files
   },
-  rules: {
-    "no-console": "off", // Allow console statements
-    "semi": ["error", "always"], // Enforce semicolons
-  },
-  ignores: [".env", "node_modules/"], // Files or directories to ignore
-};
+];
