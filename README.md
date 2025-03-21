@@ -67,7 +67,7 @@ node -v
 
 ✅ Caches dependencies for faster builds
 
- **.github/workflows/build.yml**
+**.github/workflows/build.yml**
 ```
 name: Build and Test Node.js Application
 
@@ -79,28 +79,26 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x, 20.x, 22.x]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-
       - name: Install Dependencies
-        run: npm ci
+        run: npm ci  # Ensures dependencies are installed correctly
+
+      - name: Check ESLint Installation
+        run: npx eslint --version  # Confirm ESLint is installed
+
+      - name: Fix ESLint Permission Issue
+        run: chmod +x node_modules/.bin/eslint  # Avoid "Permission Denied"
 
       - name: Run ESLint
-        run: npx eslint . --ext .js
+        run: npx eslint . --ext .js --debug  # Debug mode for error visibility
 
       - name: Run Tests
         run: npm test
 ```
+
 
 ---
 
@@ -269,6 +267,7 @@ permissions:
 ```
 ssh -i ~/.ssh/ci-cd-key.pem ubuntu@your-ec2-ip
 pm2 logs
+pm2 logs index.js 
 ```
 
 **📌 Troubleshoot Errors**
